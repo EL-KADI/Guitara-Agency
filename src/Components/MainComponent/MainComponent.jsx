@@ -136,7 +136,7 @@ function Main() {
         <div className="flex justify-center -mx-8 -my-14">
           <HexagonCell
             position="slide-left"
-            className="bg-white"
+            className="bg-white my-6 md:my-2  sm:my-4"
             onImageClick={() => handleImageClick("slide-left")}
           >
             <img
@@ -147,18 +147,18 @@ function Main() {
           </HexagonCell>
           <HexagonCell
             position="middle"
-            className="bg-slate-800"
+            className="bg-slate-800 my-6 md:my-2 sm:my-4"
             onImageClick={() => handleImageClick("middle")}
           >
             <img
               src={images[4]}
               alt="giphy"
-              className="clipped-image w-full h-full object-cover cursor-pointer"
+              className="clipped-image w-full h-full  object-cover cursor-pointer"
             />
           </HexagonCell>
           <HexagonCell
             position="slide-right"
-            className="bg-black"
+            className="bg-black my-6 md:my-2 sm:my-4"
             onImageClick={() => handleImageClick("slide-right")}
           >
             <img
