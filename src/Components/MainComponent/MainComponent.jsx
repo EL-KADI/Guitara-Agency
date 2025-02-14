@@ -108,8 +108,8 @@ function Main() {
   }, []);
 
   return (
-    <div className=" bg-gradient-to-br from-[#10151f] to-[#263248] flex items-center justify-center p-8 py-20">
-      <div className="hex-container max-w-4xl">
+    <div className=" bg-gradient-to-br from-[#10151f] to-[#263248] flex items-center justify-center p-8 py-20 ">
+      <div className="hex-container lg:max-w-4xl container ">
         <div className="flex justify-center -mx-8">
           <HexagonCell
             position="top-left"
