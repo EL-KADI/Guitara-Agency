@@ -31,14 +31,19 @@ function Slider() {
     return () => clearInterval(interval);
   }, []);
 
+  const getPositionX = (e) => {
+    return e.touches ? e.touches[0].clientX : e.clientX;
+  };
+
   const handleDragStart = (e) => {
     setIsDragging(true);
-    setStartPos(e.clientX - currentTranslate);
+    setStartPos(getPositionX(e) - currentTranslate);
   };
 
   const handleDragMove = (e) => {
     if (!isDragging) return;
-    const currentPosition = e.clientX - startPos;
+    e.preventDefault();
+    const currentPosition = getPositionX(e) - startPos;
     setCurrentTranslate(currentPosition);
   };
 
@@ -61,17 +66,18 @@ function Slider() {
     <div className="relative md:w-full overflow-hidden md:h-[550px] object-center object-cover bg-gray-900">
       <div
         ref={sliderRef}
-        className="flex transition-transform duration-500 ease-out h-full"
+        className="flex transition-transform duration-500 ease-out h-full touch-pan-y"
         style={{
-          transform: `translateX(calc(-${
-            currentSlide * 100
-          }% + ${currentTranslate}px))`,
+          transform: `translateX(calc(-${currentSlide * 100}% + ${currentTranslate}px))`,
           cursor: isDragging ? "grabbing" : "grab",
         }}
         onMouseDown={handleDragStart}
         onMouseMove={handleDragMove}
         onMouseUp={handleDragEnd}
         onMouseLeave={handleDragEnd}
+        onTouchStart={handleDragStart}
+        onTouchMove={handleDragMove}
+        onTouchEnd={handleDragEnd}
       >
         {slides.map((slide) => (
           <div key={slide.id} className="min-w-full h-full">
