@@ -100,7 +100,7 @@ export default function Contact() {
                 <a
                   target="_blank"
                   className="flex"
-                  href="https://www.google.com/maps/place/Guitara+grop/"
+                  href="https://www.google.com/maps/place/Guitara+grop/@30.1060769,31.3452172,753m/data=!3m2!1e3!4b1!4m6!3m5!1s0x1458150005ed3169:0x752adabe933c3121!8m2!3d30.1060769!4d31.3452172!16s%2Fg%2F11ybks4hyw?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D"
                 >
                   <IoLocationOutline className="me-2 text-white text-[14px]" />
                   <h2 className="text-white text-[10px]">
